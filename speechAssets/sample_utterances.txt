@@ -1,0 +1,25 @@
+RecipeIntent what is a {Item}
+RecipeIntent what is the purpose of the {Item}
+RecipeIntent what is the purpose of a {Item}
+RecipeIntent what is the purpose of an {Item}
+RecipeIntent what is the function of a {Item}
+RecipeIntent what is the function of an {Item}
+RecipeIntent start the {Game}
+RecipeIntent start {Game}
+AnswerIntent the answer is {Answer}
+AnswerIntent my answer is {Answer}
+AnswerIntent is it {Answer}
+AnswerIntent {Answer} is my answer
+AnswerIntent {Answer}
+DontKnowIntent i don't know
+DontKnowIntent don't know
+DontKnowIntent skip
+DontKnowIntent i don't know that
+DontKnowIntent who knows
+DontKnowIntent i don't know this question
+DontKnowIntent i don't know that one
+DontKnowIntent dunno
+AMAZON.StartOverIntent start game
+AMAZON.StartOverIntent new game
+AMAZON.StartOverIntent start
+AMAZON.StartOverIntent start new game

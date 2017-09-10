@@ -1,0 +1,44 @@
+{
+  "intents": [
+    {
+      "slots": [
+        {
+          "name": "Item",
+          "type": "LIST_OF_ITEMS"
+        },
+        {
+          "name": "Game",
+          "type": "START_GAME"
+        }
+      ],
+      "intent": "RecipeIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Answer",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "AnswerIntent"
+    },
+    {
+      "intent": "DontKnowIntent"
+    },
+    {
+      "intent": "AMAZON.RepeatIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.StartOverIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
