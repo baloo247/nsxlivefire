@@ -1,11 +1,12 @@
 slot name: LIST_OF_ITEMS
 
 controllers
-nsx manager
+controller
+NSX manager
 host provisioning
-vxlan
-esg
-dlr
+VXLAN
+ESG
+DLR
 logical switches
 universal controllers
 universal logical router
@@ -15,6 +16,78 @@ logical switch
 universal logical routers
 logical router
 logical routers
+PPSP
+PPSP Tiers
+PPSP Contact
+Livefire contact
+PPSP Benefits
+user world agents
+NETCPA
+VSFWD
+MTU
+CDO
+control-VM
+number of DLR LIF
+LIF ARP Table
+VMAC
+distributed router dynamic routing
+protocol address
+forwarding address
+OSPF areas
+BGP
+ECMP
+VDS
+transport zone
+VTEP load balancing
+VTEP configuration
+replication mode
+unicast mode
+multicast mode
+hybrid mode
+VTEP report
+MAC report
+IP report
+ARP request 
+NSX security framework
+distributed firewall
+guest introspection
+network introspection
+DFW packet walk
+VCENTER objects
+security groups
+security tags
+applied to field
+application rule manager
+service composer
+endpoint monitoring
+LACP
+MLAG
+ESG routing design
+ESG sizing
+HSC
+HSC advertise
+HSC hardware switch controller
+RSN
+replication service node
+physical to virtual integration
+physical routing integration
+physical briding integration
+primary
+secondary
+transit
+standard
+universal segment ID 
+local-ID
+universal synchronisation service 
+locale ID
+universal object creation
+local objects
+cross-VC design
+universal firewall section
+universal firewall rules
+NSX and SRM 
+VSPHERE HA
+anti affinity rules
 
 
 slot name: START_GAME
