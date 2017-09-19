@@ -1,11 +1,11 @@
-RecipeIntent what is a {Item}
-RecipeIntent what is the purpose of the {Item}
-RecipeIntent what is the purpose of a {Item}
-RecipeIntent what is the purpose of an {Item}
-RecipeIntent what is the function of a {Item}
-RecipeIntent what is the function of an {Item}
-RecipeIntent start the {Game}
-RecipeIntent start {Game}
+LivefireIntent what is a {Item}
+LivefireIntent what is the purpose of the {Item}
+LivefireIntent what is the purpose of a {Item}
+LivefireIntent what is the purpose of an {Item}
+LivefireIntent what is the function of a {Item}
+LivefireIntent what is the function of an {Item}
+LivefireIntent start the {Game}
+LivefireIntent start {Game}
 AnswerIntent the answer is {Answer}
 AnswerIntent my answer is {Answer}
 AnswerIntent is it {Answer}
