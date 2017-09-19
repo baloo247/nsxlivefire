@@ -30,7 +30,7 @@ Skills are managed through the Amazon Developer Portal. You’ll link the Lambda
 
  6. Next, we need to define our skill’s Interaction Model. Let’s begin with the intent schema. In the context of Alexa, an intent represents an action that fulfills a user’s spoken request. Intents can optionally have arguments called slots. We will  be using custom slots in this skill. Note: You will need to define both custom slot type values and sample utterances in language that matches current language tab.
 
-* Review the intent schema below. This is written in JSON and provides the information needed to map the intents we want to handle programmatically.  Copy/Paste the intent schema in the [GitHub repository here](https://github.com/baloo247/nsxlivefire/speechassets/intents.txt) to Intent Schema section in Developer Portal.
+* Review the intent schema below. This is written in JSON and provides the information needed to map the intents we want to handle programmatically.  Copy/Paste the intent schema in the [GitHub repository here](https://github.com/baloo247/nsxlivefire/tree/master/speechAssets/intents.txt) to Intent Schema section in Developer Portal.
 
 * You will see the intents for getting a answer from user, and then a collection of built-in intents to simplify handling common user tasks. Help intent will handle any time the user asks for help, stop and cancel are built-in intents to make it easier for you to handle when a user wants to exit the application. For more on the use of built-in intents, go [here](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/implementing-the-built-in-intents).
 
@@ -77,11 +77,11 @@ Skills are managed through the Amazon Developer Portal. You’ll link the Lambda
 
  7. Create the Custom Slots
  
-Select and copy/paste the custom slots from [GitHub](https://github.com/baloo247/nsxlivefire/speechAssets/customslots) Note there are two custom slots you define - LIST_OF_ITEMS and START_GAME
+Select and copy/paste the custom slots from [GitHub](https://github.com/baloo247/nsxlivefire/https://github.com/baloo247/nsxlivefire/tree/master/speechAssets/customslots) Note there are two custom slots you define - LIST_OF_ITEMS and START_GAME
  
  8. The next step is to build the utterance list.
 
-Select and copy/paste the sample utterances from [GitHub](https://github.com/baloo247/nsxlivefire/speechAssets/sample_utterances.txt) with your initial language. For example, if your select English (US) as initial language above, then you will need to copy/paste SampleUtterances_en_US.txt in previous link. An example of utterances is listed below. Once they are copied, the screen should look similar to the following image:
+Select and copy/paste the sample utterances from [GitHub](https://github.com/baloo247/nsxlivefire/tree/master/speechAssets/sample_utterances.txt) with your initial language. For example, if your select English (US) as initial language above, then you will need to copy/paste SampleUtterances_en_US.txt in previous link. An example of utterances is listed below. Once they are copied, the screen should look similar to the following image:
 
 ![](https://s3.amazonaws.com/lantern-code-samples-images/trivia/sample_utterances_us.PNG)
 
