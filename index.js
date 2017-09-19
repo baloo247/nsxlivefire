@@ -14,8 +14,8 @@ const Alexa = require('alexa-sdk');
 const recipes = require('./recipes');
 const questions = require('./question')
 
-const ANSWER_COUNT = 4; // The number of possible answers per trivia question.
-const GAME_LENGTH = 3;  // The number of questions per trivia game.
+const ANSWER_COUNT = 3; // The number of possible answers per trivia question.
+const GAME_LENGTH = 10;  // The number of questions per trivia game.
 const GAME_STATES = {
     TRIVIA: '_TRIVIAMODE', // Asking trivia questions.
     START: '_STARTMODE', // Entry point, start the game.
@@ -29,7 +29,7 @@ const languageStrings = {
         translation: {
             RECIPES: recipes.RECIPE_EN_US,
             SKILL_NAME: 'NSX Livefire',
-            WELCOME_MESSAGE: "Welcome to %s. You can ask a question like, what\'s the purpose of the NSX Controller? Or you can start the trivia quiz... Now, what can I help you with?",
+            WELCOME_MESSAGE: "Welcome to %s. You can ask a question like, what\'s the purpose of the NSX Controller? Or you can start the quiz... Now, what can I help you with?",
             WELCOME_REPROMPT: 'For instructions on what you can say, please say help me.',
             DISPLAY_CARD_TITLE: '%s  - Details of %s.',
             HELP_MESSAGE: "You can ask questions such as, what\'s the purpose, or, start quiz, or, you can say exit...Now, what can I help you with?",
@@ -92,7 +92,7 @@ const handlers = {
         this.emit(':ask', this.attributes.speechOutput, this.attributes.repromptSpeech);
     },
 
-    'RecipeIntent': function () {
+    'LivefireIntent': function () {
         const itemSlot = this.event.request.intent.slots.Item;
         const gameSlot = this.event.request.intent.slots.Game;
         let itemName;
