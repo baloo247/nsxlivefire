@@ -153,7 +153,7 @@ AWS Lambda lets you run code without provisioning or managing servers. You pay o
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/trivia/aws_next.png)
 
- 7. You should now be in the **"Configure Function"** section. Enter the Name, Description, and select "Node 4.3" as the Runtime for your skill as in the example.
+ 7. You should now be in the **"Configure Function"** section. Enter the Name, Description, and select "Node 6.1" as the Runtime for your skill as in the example.
 
  ![](https://s3.amazonaws.com/lantern-code-samples-images/trivia/aws_config_function.PNG)
 
