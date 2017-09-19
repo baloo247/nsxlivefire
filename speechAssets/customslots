@@ -1,3 +1,5 @@
+Note there are two custom slots you define - LIST_OF_ITEMS and START_GAME
+
 slot name: LIST_OF_ITEMS
 
 controllers
