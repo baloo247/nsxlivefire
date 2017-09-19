@@ -77,7 +77,7 @@ Skills are managed through the Amazon Developer Portal. You’ll link the Lambda
 
  7. Create the Custom Slots
  
-Select and copy/paste the custom slots from [GitHub](https://github.com/baloo247/nsxlivefire/https://github.com/baloo247/nsxlivefire/blob/master/speechAssets/customslots) Note there are two custom slots you define - LIST_OF_ITEMS and START_GAME
+Select and copy/paste the custom slots from [GitHub](https://github.com/baloo247/nsxlivefire/blob/master/speechAssets/customslots) Note there are two custom slots you define - LIST_OF_ITEMS and START_GAME
  
  8. The next step is to build the utterance list.
 
