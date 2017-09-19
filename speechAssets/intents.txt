@@ -11,7 +11,7 @@
           "type": "START_GAME"
         }
       ],
-      "intent": "RecipeIntent"
+      "intent": "LivefireIntent"
     },
     {
       "slots": [
