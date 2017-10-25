@@ -29,17 +29,18 @@ const languageStrings = {
         translation: {
             RECIPES: recipes.RECIPE_EN_US,
             SKILL_NAME: 'NSX Livefire',
-            WELCOME_MESSAGE: "Welcome to %s. You can ask a question like, what\'s the purpose of the NSX Controller? Or you can start the quiz... Now, what can I help you with?",
+            WELCOME_MESSAGE: "Hi there, welcome to %s. VM ware NSX is the next BIG thing in behind the scenes computer technology.  As a software defined networking solution it covers everything from physical and virtual logical networks, routers, and firewalls, and more.  Ask me about NSX components, e.g. by saying what's the purpose of the controllers, and I will help you learn, or say start the quiz! Now what can I help you with?",
             WELCOME_REPROMPT: 'For instructions on what you can say, please say help me.',
             DISPLAY_CARD_TITLE: '%s  - Details of %s.',
-            HELP_MESSAGE: "You can ask questions such as, what\'s the purpose, or, start quiz, or, you can say exit...Now, what can I help you with?",
+            HELP_MESSAGE: "You can ask questions such as, what\'s the purpose of, what is the function of, what is a, or, start quiz, or, you can say exit...Now, what can I help you with?",
             HELP_REPROMPT: "You can say things like, what\'s the purpose, or, start quiz, or, you can say exit...Now, what can I help you with?",
-            STOP_MESSAGE: 'Goodbye!',
+            STOP_MESSAGE: 'Ok, comeback again for more NSX info and training.',
             RECIPE_REPEAT_MESSAGE: 'Try saying repeat.',
             RECIPE_NOT_FOUND_MESSAGE: "I\'m sorry, I currently do not know ",
             RECIPE_NOT_FOUND_WITH_ITEM_NAME: 'the details for %s. ',
             RECIPE_NOT_FOUND_WITHOUT_ITEM_NAME: 'that information. ',
             RECIPE_NOT_FOUND_REPROMPT: 'What else can I help with?',
+            ASK_MESSAGE: '<break time="3s"/> You can now repeat the answer, ask another question, start the trivia or say exit',
             'QUESTIONS': questions['QUESTIONS_EN_US'],
             'GAME_NAME': 'NSX livefire Trivia', // Be sure to change this for your skill.
             'HELP_MESSAGE_TRIVIA': 'I will ask you %s multiple choice questions. Respond with the number of the answer. ' +
@@ -65,27 +66,41 @@ const languageStrings = {
             'SCORE_IS_MESSAGE': 'Your score is %s. ',
         },
     },
+    'en-IN': {
+        translation: {
+            RECIPES: recipes.RECIPE_EN_IN,
+            SKILL_NAME: 'NSX Livefire',
+            SKILL_NAME_ANNOUNCE: 'NSX Livefire',
+            'QUESTIONS': questions['QUESTIONS_EN_IN'],
+            'GAME_NAME': 'NSX Livefire Trivia', // Be sure to change this for your skill.
+            'GAME_NAME_ANNOUNCE': 'NSX Livefire Trivia', // Be sure to change this for your skill. 
+        },
+    },
     'en-US': {
         translation: {
             RECIPES: recipes.RECIPE_EN_US,
             SKILL_NAME: 'NSX Livefire',
+            SKILL_NAME_ANNOUNCE: 'NSX Liivefire',
             'QUESTIONS': questions['QUESTIONS_EN_US'],
             'GAME_NAME': 'NSX Livefire Trivia', // Be sure to change this for your skill.
+            'GAME_NAME_ANNOUNCE': 'NSX Liivefire Trivia', // Be sure to change this for your skill.
         },
     },
     'en-GB': {
         translation: {
             RECIPES: recipes.RECIPE_EN_GB,
             SKILL_NAME: 'NSX Livefire',
+            SKILL_NAME_ANNOUNCE: 'NSX Livefire',
             'QUESTIONS': questions['QUESTIONS_EN_GB'],
-            'GAME_NAME': 'NSX Livefire Trivia', // Be sure to change this for your skill.
+            'GAME_NAME': 'NSX Livefire Quiz', // Be sure to change this for your skill.
+            'GAME_NAME_ANNOUNCE': 'NSX Livefire Trivia', // Be sure to change this for your skill.
         },
     },
 };
 
 const handlers = {
     'LaunchRequest': function () {
-        this.attributes.speechOutput = this.t('WELCOME_MESSAGE', this.t('SKILL_NAME'));
+        this.attributes.speechOutput = this.t('WELCOME_MESSAGE', this.t('SKILL_NAME_ANNOUNCE'));
         // If the user either does not reply to the welcome message or says something that is not
         // understood, they will be prompted again with this text.
         this.attributes.repromptSpeech = this.t('WELCOME_REPROMPT');
@@ -104,15 +119,18 @@ const handlers = {
             gameName = gameSlot.value.toLowerCase();
         }
 
+
+
         const cardTitle = this.t('DISPLAY_CARD_TITLE', this.t('SKILL_NAME'), itemName);
         const myRecipes = this.t('RECIPES');
 
         const recipe = myRecipes[itemName];
+        const recipe2 = (recipe + this.t('ASK_MESSAGE'))
 
         if (recipe) {
-             this.attributes.speechOutput = recipe;
+             this.attributes.speechOutput = recipe2;
              this.attributes.repromptSpeech = this.t('RECIPE_REPEAT_MESSAGE');
-             this.emit(':askWithCard', recipe, this.attributes.repromptSpeech, cardTitle, recipe);
+             this.emit(':askWithCard', recipe2, this.attributes.repromptSpeech, cardTitle, recipe);
         } else if (gameName) {
            this.handler.state = GAME_STATES.START;
            this.emitWithState('StartGame', true);
@@ -292,7 +310,7 @@ function handleUserGuess(userGaveUp) {
 
 const startStateHandlers = Alexa.CreateStateHandler(GAME_STATES.START, {
     'StartGame': function (newGame) {
-        let speechOutput = newGame ? this.t('NEW_GAME_MESSAGE', this.t('GAME_NAME')) + this.t('WELCOME_MESSAGE_TRIVIA', GAME_LENGTH.toString()) : '';
+        let speechOutput = newGame ? this.t('NEW_GAME_MESSAGE', this.t('GAME_NAME_ANNOUNCE')) + this.t('WELCOME_MESSAGE_TRIVIA', GAME_LENGTH.toString()) : '';
         // Select GAME_LENGTH questions for the game
         const translatedQuestions = this.t('QUESTIONS');
         const gameQuestions = populateGameQuestions(translatedQuestions);
@@ -351,7 +369,7 @@ const triviaStateHandlers = Alexa.CreateStateHandler(GAME_STATES.TRIVIA, {
     'AMAZON.StopIntent': function () {
         this.handler.state = GAME_STATES.HELP;
         const speechOutput = this.t('STOP_MESSAGE');
-        this.response.speak(speechOutput).listen(speechOutput);
+        this.response.speak(speechOutput);
         this.emit(':responseReady');
     },
     'AMAZON.CancelIntent': function () {
